@@ -151,25 +151,25 @@ const app = express()
     
   }
 
-  app.get("/math", (req, res) => {
-    var result = solveMath(req);
-    res.render("pages/results", {
-      answer: result
-    });
-  });
-  app.get("/math_service", (req, res) => {
+  // app.get("/math", (req, res) => {
+  //   var result = solveMath(req);
+  //   res.render("pages/results", {
+  //     answer: result
+  //   });
+  // });
+  // app.get("/math_service", (req, res) => {
   
-    res.writeHead(200, {
-      "Content-Type": "application/json"
-    })
-    var result = solveMath(req);
-    console.log(result);
-    var json = JSON.stringify({
-      "answer": result
-    })
-    console.log(`math service: ${json}`);
-    res.end(json);
-  })
+  //   res.writeHead(200, {
+  //     "Content-Type": "application/json"
+  //   })
+  //   var result = solveMath(req);
+  //   console.log(result);
+  //   var json = JSON.stringify({
+  //     "answer": result
+  //   })
+  //   console.log(`math service: ${json}`);
+  //   res.end(json);
+  // })
   // async function () {
   //   let response = await fetch('/math_service')
   //   let responseJson = await response.json()
@@ -189,36 +189,36 @@ const app = express()
   //     })
   //     alert(fromServer);
   //   },
-  app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+  // app.listen(PORT, () => console.log(`Listening on ${PORT}`))
   // if a file is in the public it just renders automatically
   // operand1, operation, operand2
-  function solveMath(req) {
-    var operand1 = req.query.operand1;
-    var operand2 = req.query.operand2;
-    var operation = req.query.operation;
+  // function solveMath(req) {
+  //   var operand1 = req.query.operand1;
+  //   var operand2 = req.query.operand2;
+  //   var operation = req.query.operation;
   
-    if (operation == "+") {
-      var result = +operand1 + +operand2;
+  //   if (operation == "+") {
+  //     var result = +operand1 + +operand2;
   
-    }
-    if (operation == "-") {
-      var result = +operand1 - +operand2;
+  //   }
+  //   if (operation == "-") {
+  //     var result = +operand1 - +operand2;
   
-    }
-    if (operation == "*") {
-      var result = +operand1 * +operand2;
+  //   }
+  //   if (operation == "*") {
+  //     var result = +operand1 * +operand2;
   
-    }
-    if (operation == "/") {
-      var result = +operand1 / +operand2;
+  //   }
+  //   if (operation == "/") {
+  //     var result = +operand1 / +operand2;
   
-    }
-    console.log(operation);
-    console.log(operand2);
-    console.log(operand1);
-    console.log(result);
-    // res.render('/results', () => {
-    //   answer: result 
-    // })
-    return result;
-  }
+  //   }
+  //   console.log(operation);
+  //   console.log(operand2);
+  //   console.log(operand1);
+  //   console.log(result);
+  //   // res.render('/results', () => {
+  //   //   answer: result 
+  //   // })
+  //   return result;
+  // }
